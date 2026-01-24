@@ -1,5 +1,46 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>零の笔记</title><link>https://lei-shuo.github.io</link><description>学习，记录，生活</description><copyright>零の笔记</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.9TKrUoXS_dCmjfLDZr906gHaHH?rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3</url><title>avatar</title><link>https://lei-shuo.github.io</link></image><lastBuildDate>Sat, 24 Jan 2026 03:21:21 +0000</lastBuildDate><managingEditor>零の笔记</managingEditor><ttl>60</ttl><webMaster>零の笔记</webMaster><item><title>GPS测量原理及其应用 p05 05GPS原理及其应用 绪论（五）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p05%2005GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-wu-%EF%BC%89.html</link><description>## 目录
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>零の笔记</title><link>https://lei-shuo.github.io</link><description>学习，记录，生活</description><copyright>零の笔记</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.9TKrUoXS_dCmjfLDZr906gHaHH?rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3</url><title>avatar</title><link>https://lei-shuo.github.io</link></image><lastBuildDate>Sat, 24 Jan 2026 03:22:01 +0000</lastBuildDate><managingEditor>零の笔记</managingEditor><ttl>60</ttl><webMaster>零の笔记</webMaster><item><title>GPS测量原理及其应用 p06 06GPS原理及其应用 绪论（六）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p06%2006GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-liu-%EF%BC%89.html</link><description># 目录
+- GPS的两种服务：SPS与PPS
+- 美国政府早期的GPS政策（SA政策）
+- 反电子干扰与欺骗的防护技术
+- 全球定位系统的产生与发展
+
+## GPS的两种服务：SPS与PPS [原片 @ 00:00](https://www.bilibili.com/video/BV1ia4y1s7sj_p6?t=0)
+- 概念背景：GPS早期服务采取内外有别的策略，虽向全球免费开放，但对用户类型进行服务区分，该概念在冷战时期的背景下提出
+- 标准定位服务（SPS）：面向全球普通非授权用户，仅可使用C/A码，早期定位精度受SA政策限制
+- 精密定位服务（PPS）：仅对美国及盟国军方用户、少量经美国政府特许的非军方用户开放，可使用P码，不受SA政策影响，定位精度更高
+*![](/static/screenshots/screenshot_000_945ee4e0-e82b-4fe8-a129-8eb3b475db33.jpg)
+
+## 美国政府早期的GPS政策（SA政策） [原片 @ 01:59](https://www.bilibili.com/video/BV1ia4y1s7sj_p6?t=119)
+- 政策背景：冷战时期，美国国防部为避免非授权用户利用GPS威胁美国国家安全，推出选择可用性（SA）政策，限制普通用户的定位精度
+- 核心措施：
+  1. **星历误差注入**：在卫星星历中人为加入50-150米的误差，使得用户获取的卫星空间位置信息不准确，降低距离交会的定位精度
+  2. **卫星钟抖动**：故意让卫星钟走时不稳定（忽快忽慢），导致信号传播时间测量出现误差，进一步降低定位精度
+- 精度标准：最初计划将非授权用户的定位精度降至500米，后在各方争议下妥协为：平面定位精度100米（95%置信度），高程定位精度156米，时间测量精度340纳秒
+- 争议与妥协：美国交通部代表民用领域反对该政策，认为过度限制了GPS的民用价值，最终美国政府出台妥协后的精度指标
+*![](/static/screenshots/screenshot_001_06b20b32-e664-466f-a36c-7ba74111200b.jpg)
+
+## 反电子干扰与欺骗的防护技术 [原片 @ 17:27](https://www.bilibili.com/video/BV1ia4y1s7sj_p6?t=1047)
+- 威胁类型：
+  1. **电子干扰**：敌方发射相同频率的干扰信号，使用户无法正常接收GPS卫星信号
+  2. **电子欺骗**：敌方伪造与GPS相同频率、码结构的虚假信号，并搭载错误的导航电文（如虚假卫星位置），误导用户获取错误定位结果
+- 应对策略：早期对P码进行保密，仅授权用户可获取P码结构，防止敌方伪造P码信号；C/A码则向全球公开
+- 后续变化：SA政策取消后，P码保密的实际意义有所减弱
+*![](/static/screenshots/screenshot_002_d5932f87-fc27-4d6c-bb3b-0e6bb72e6aac.jpg)
+
+## 全球定位系统的产生与发展 [原片 @ 11:48](https://www.bilibili.com/video/BV1ia4y1s7sj_p6?t=708)
+- 前期技术准备：基于美国海军的Timation计划和美国空军的621B计划，为GPS的技术研发奠定基础
+- 关键发展节点：
+  1. 1967年、1969年分别发射Timation-1和Timation-2卫星，搭载石英钟
+  2. 1974年发射NTS-1（Navigation Technology Satellite 1），首次搭载2台铷原子钟
+  3. 1977年发射NTS-2，首次搭载铯原子钟
+  4. 1973年，美国国防部成立联合工作办公室（JPO-Joint Program Office），综合TRANSIT、Timation和621B等方案的技术优点，正式提出NAVSTAR/GPS项目方案
+*![](/static/screenshots/screenshot_003_f24f36bd-c1d2-4c0b-9840-dca8cbd766af.jpg)
+*![](/static/screenshots/screenshot_004_fdec4074-aa44-40fe-b948-882d570f9df9.jpg)
+*![](/static/screenshots/screenshot_005_e2200664-3705-44b4-a21d-dd38c3158579.jpg)
+
+## AI 总结
+本课程内容围绕GPS的服务体系、早期政策、防护技术以及发展历程展开，详细介绍了GPS两种服务SPS与PPS的定位差异，美国早期SA政策对民用精度的限制措施与争议，针对电子干扰和欺骗的防护手段，以及GPS从军方前期计划到正式项目的关键发展节点，系统呈现了GPS在发展过程中技术、政策层面的核心要点。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p06%2006GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-liu-%EF%BC%89.html</guid><pubDate>Sat, 24 Jan 2026 03:21:38 +0000</pubDate></item><item><title>GPS测量原理及其应用 p05 05GPS原理及其应用 绪论（五）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p05%2005GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-wu-%EF%BC%89.html</link><description>## 目录
 - 上节课内容回顾：第一代卫星导航TRANSIT系统的缺陷 [原片 @ 00:00](https://www.bilibili.com/video/BV1ia4y1s7sj_p5?t=0)
 - 课程教学说明 [原片 @ 06:55](https://www.bilibili.com/video/BV1ia4y1s7sj_p5?t=415)
 - 多普勒计数的原理详解 [原片 @ 12:30](https://www.bilibili.com/video/BV1ia4y1s7sj_p5?t=750)
