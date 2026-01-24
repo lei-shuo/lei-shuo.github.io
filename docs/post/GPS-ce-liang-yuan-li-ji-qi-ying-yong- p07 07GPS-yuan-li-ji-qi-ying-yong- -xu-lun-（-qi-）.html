@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>
+    <link rel="icon" href="https://tse4.mm.bing.net/th/id/OIP.9TKrUoXS_dCmjfLDZr906gHaHH?rs=1&pid=ImgDetMain&o=7&rm=3"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# GPS原理及其应用 绪论（七）笔记
+
+## 目录
+- 无法进行连续定位的原因及引发问题
+- 全球定位系统（GPS）的产生与发展
+- 美国政府的GPS政策演变
+- AI总结
+
+---
+
+## 无法进行连续定位的原因及引发问题 *Content-[00:00-01:40]
+- 无法连续定位的核心原因
+  - 卫星数量不足、不同卫星采用相同频率信号，导致定位连续性受影响 *![](/static/screenshots/screenshot_000_43449c0f-700c-458d-847a-7185e533fb8d.jpg)
+- 引发的实际问题
+  - 中低纬度地区，两次卫星通过的平均间隔约1.5小时，定位间隔过长
+  - 相邻轨道卫星信号易相互干扰，极端情况下需关闭其中一颗卫星信号以保障定位 *![](/static/screenshots/screenshot_001_7686084a-32ae-4399-bf54-fca059f33d22.jpg)
+
+---
+
+## 全球定位系统（GPS）的产生与发展 *Content-[01:40-03:00]
+### GPS系统基本概况
+- 由美国建立，全称为**NAVigation Satellite Timing And Ranging Global Positioning System（NAVSTAR GPS）**，设计卫星星座包含24颗GPS卫星 *![](/static/screenshots/screenshot_002_d7c70d9e-1cb4-4c8f-8a64-0629b68c7279.jpg)
+
+### 前期技术准备
+- 依托两大计划：美国海军Timation计划、美国空军621B计划，为GPS的技术框架奠定基础 *![](/static/screenshots/screenshot_003_7535168d-b1e8-4316-bbe7-1beaa0226a55.jpg)
+
+### 关键试验卫星技术突破
+- 1967年、1969年分别发射Timation-1、Timation-2，搭载石英钟完成基础试验
+- 1974年发射NTS-1（Navigation Technology Satellite 1），首次搭载2台铷原子钟，提升时间精度
+- 1977年发射NTS-2，首次搭载铯钟，进一步优化卫星计时性能 *![](/static/screenshots/screenshot_004_a98e7d17-32fd-49b9-acaa-6a11543544ab.jpg)
+
+### 正式项目方案确定
+- 1973年美国国防部成立联合工作办公室（JPO-Joint Program Office），综合TRANSIT、Timation和621B等方案的技术优点，正式提出NAVSTAR/GPS项目方案 *![](/static/screenshots/screenshot_005_c6b48038-e94e-4e8f-984a-6a31ca5acd16.jpg)
+
+---
+
+## 美国政府的GPS政策演变 *Content-[03:00-03:40]
+### 早期AS（反电子欺骗）技术
+- 背景：P码（PIMA）技术公开后，敌方可生成P码，为保障军方定位安全，在P码基础上加密W码生成Y码，仅特许用户可使用
+- 影响：属于防卫性措施，防止战时敌方假信号干扰，但增加了非特许用户的定位数据处理难度，无法使用高精度的P码测距 *![](/static/screenshots/screenshot_006_5978f2b1-fc45-4b9e-87a3-9fd6918a64d4.jpg)
+
+### SS（选择可用性）政策的取消
+- 政策调整背景
+  1. 国际形势变化：冷战结束，原军事对抗需求减弱
+  2. 经济发展需求：GPS产业成为美国经济新增长点，SS政策限制产业发展，遭到民用用户与厂商反对
+  3. 技术突破：差分GPS系统可大幅削弱SS政策的精度限制，非特许用户也能获得高精度定位
+  4. 国际竞争：俄罗斯格洛纳斯（GLONASS）系统不实施SS政策，定位精度更高，GPS面临用户流失风险
+- 实施调整：1996年美国以总统特别指令形式宣布计划取消SS，2000年5月2日正式取消，此后SS与PPS（精密定位服务）的差异大幅模糊 *![](/static/screenshots/screenshot_007_d7b4c23a-c191-4aee-b308-a305e390841a.jpg)
+
+### GPS现代化计划
+- 核心措施
+  1. 从Block IIR卫星开始，在L2频段调制民用L2-C码，非特许用户可使用双频率信号消除电离层延迟 *![](/static/screenshots/screenshot_008_03a6e013-2def-4eaa-b7aa-e12fd0631763.jpg)
+  2. 从Block IIR-M卫星开始，新增第三民用频率L5，L5码的性能接近军用Y码，进一步提升民用定位精度
+  3. 分离军用M码，增强军方信号的抗干扰能力，缩短定位初始化时间，提升军方用户使用稳定性
+  4. 具备特定区域干扰敌方使用GPS的能力
+- 目标：保障美国军方用户的安全使用，同时巩固GPS在全球民用卫星导航市场的领导地位 *![](/static/screenshots/screenshot_009_b6e67f97-3d78-4b4d-864c-b4ddba09266c.jpg)
+
+---
+
+## AI总结
+本笔记系统梳理了GPS发展历程中的核心节点与美国GPS政策的演变逻辑：首先分析了早期卫星导航无法连续定位的技术缺陷及衍生问题；接着从技术准备、试验卫星到项目立项，完整呈现了GPS系统的诞生过程；最后重点讲解美国GPS政策从早期反电子欺骗的AS技术、限制民用精度的SS政策，到取消SS并推进GPS现代化的调整过程，政策变化既回应了军事安全需求，也适配了民用产业发展与国际竞争态势，体现了卫星导航技术在军事、经济领域的双重战略价值。">
+<meta property="og:title" content="GPS测量原理及其应用 p07 07GPS原理及其应用 绪论（七）">
+<meta property="og:description" content="# GPS原理及其应用 绪论（七）笔记
+
+## 目录
+- 无法进行连续定位的原因及引发问题
+- 全球定位系统（GPS）的产生与发展
+- 美国政府的GPS政策演变
+- AI总结
+
+---
+
+## 无法进行连续定位的原因及引发问题 *Content-[00:00-01:40]
+- 无法连续定位的核心原因
+  - 卫星数量不足、不同卫星采用相同频率信号，导致定位连续性受影响 *![](/static/screenshots/screenshot_000_43449c0f-700c-458d-847a-7185e533fb8d.jpg)
+- 引发的实际问题
+  - 中低纬度地区，两次卫星通过的平均间隔约1.5小时，定位间隔过长
+  - 相邻轨道卫星信号易相互干扰，极端情况下需关闭其中一颗卫星信号以保障定位 *![](/static/screenshots/screenshot_001_7686084a-32ae-4399-bf54-fca059f33d22.jpg)
+
+---
+
+## 全球定位系统（GPS）的产生与发展 *Content-[01:40-03:00]
+### GPS系统基本概况
+- 由美国建立，全称为**NAVigation Satellite Timing And Ranging Global Positioning System（NAVSTAR GPS）**，设计卫星星座包含24颗GPS卫星 *![](/static/screenshots/screenshot_002_d7c70d9e-1cb4-4c8f-8a64-0629b68c7279.jpg)
+
+### 前期技术准备
+- 依托两大计划：美国海军Timation计划、美国空军621B计划，为GPS的技术框架奠定基础 *![](/static/screenshots/screenshot_003_7535168d-b1e8-4316-bbe7-1beaa0226a55.jpg)
+
+### 关键试验卫星技术突破
+- 1967年、1969年分别发射Timation-1、Timation-2，搭载石英钟完成基础试验
+- 1974年发射NTS-1（Navigation Technology Satellite 1），首次搭载2台铷原子钟，提升时间精度
+- 1977年发射NTS-2，首次搭载铯钟，进一步优化卫星计时性能 *![](/static/screenshots/screenshot_004_a98e7d17-32fd-49b9-acaa-6a11543544ab.jpg)
+
+### 正式项目方案确定
+- 1973年美国国防部成立联合工作办公室（JPO-Joint Program Office），综合TRANSIT、Timation和621B等方案的技术优点，正式提出NAVSTAR/GPS项目方案 *![](/static/screenshots/screenshot_005_c6b48038-e94e-4e8f-984a-6a31ca5acd16.jpg)
+
+---
+
+## 美国政府的GPS政策演变 *Content-[03:00-03:40]
+### 早期AS（反电子欺骗）技术
+- 背景：P码（PIMA）技术公开后，敌方可生成P码，为保障军方定位安全，在P码基础上加密W码生成Y码，仅特许用户可使用
+- 影响：属于防卫性措施，防止战时敌方假信号干扰，但增加了非特许用户的定位数据处理难度，无法使用高精度的P码测距 *![](/static/screenshots/screenshot_006_5978f2b1-fc45-4b9e-87a3-9fd6918a64d4.jpg)
+
+### SS（选择可用性）政策的取消
+- 政策调整背景
+  1. 国际形势变化：冷战结束，原军事对抗需求减弱
+  2. 经济发展需求：GPS产业成为美国经济新增长点，SS政策限制产业发展，遭到民用用户与厂商反对
+  3. 技术突破：差分GPS系统可大幅削弱SS政策的精度限制，非特许用户也能获得高精度定位
+  4. 国际竞争：俄罗斯格洛纳斯（GLONASS）系统不实施SS政策，定位精度更高，GPS面临用户流失风险
+- 实施调整：1996年美国以总统特别指令形式宣布计划取消SS，2000年5月2日正式取消，此后SS与PPS（精密定位服务）的差异大幅模糊 *![](/static/screenshots/screenshot_007_d7b4c23a-c191-4aee-b308-a305e390841a.jpg)
+
+### GPS现代化计划
+- 核心措施
+  1. 从Block IIR卫星开始，在L2频段调制民用L2-C码，非特许用户可使用双频率信号消除电离层延迟 *![](/static/screenshots/screenshot_008_03a6e013-2def-4eaa-b7aa-e12fd0631763.jpg)
+  2. 从Block IIR-M卫星开始，新增第三民用频率L5，L5码的性能接近军用Y码，进一步提升民用定位精度
+  3. 分离军用M码，增强军方信号的抗干扰能力，缩短定位初始化时间，提升军方用户使用稳定性
+  4. 具备特定区域干扰敌方使用GPS的能力
+- 目标：保障美国军方用户的安全使用，同时巩固GPS在全球民用卫星导航市场的领导地位 *![](/static/screenshots/screenshot_009_b6e67f97-3d78-4b4d-864c-b4ddba09266c.jpg)
+
+---
+
+## AI总结
+本笔记系统梳理了GPS发展历程中的核心节点与美国GPS政策的演变逻辑：首先分析了早期卫星导航无法连续定位的技术缺陷及衍生问题；接着从技术准备、试验卫星到项目立项，完整呈现了GPS系统的诞生过程；最后重点讲解美国GPS政策从早期反电子欺骗的AS技术、限制民用精度的SS政策，到取消SS并推进GPS现代化的调整过程，政策变化既回应了军事安全需求，也适配了民用产业发展与国际竞争态势，体现了卫星导航技术在军事、经济领域的双重战略价值。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p07%2007GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-qi-%EF%BC%89.html">
+<meta property="og:image" content="https://tse4.mm.bing.net/th/id/OIP.9TKrUoXS_dCmjfLDZr906gHaHH?rs=1&pid=ImgDetMain&o=7&rm=3">
+<title>GPS测量原理及其应用 p07 07GPS原理及其应用 绪论（七）</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">GPS测量原理及其应用 p07 07GPS原理及其应用 绪论（七）</h1>
+<div class="title-right">
+    <a href="https://lei-shuo.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/lei-shuo/lei-shuo.github.io/issues/7" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>GPS原理及其应用 绪论（七）笔记</h1>
+<h2>目录</h2>
+<ul>
+<li>无法进行连续定位的原因及引发问题</li>
+<li>全球定位系统（GPS）的产生与发展</li>
+<li>美国政府的GPS政策演变</li>
+<li>AI总结</li>
+</ul>
+<hr>
+<h2>无法进行连续定位的原因及引发问题 *Content-[00:00-01:40]</h2>
+<ul>
+<li>无法连续定位的核心原因
+<ul>
+<li>卫星数量不足、不同卫星采用相同频率信号，导致定位连续性受影响 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_000_43449c0f-700c-458d-847a-7185e533fb8d.jpg"><img src="/static/screenshots/screenshot_000_43449c0f-700c-458d-847a-7185e533fb8d.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+</li>
+<li>引发的实际问题
+<ul>
+<li>中低纬度地区，两次卫星通过的平均间隔约1.5小时，定位间隔过长</li>
+<li>相邻轨道卫星信号易相互干扰，极端情况下需关闭其中一颗卫星信号以保障定位 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_001_7686084a-32ae-4399-bf54-fca059f33d22.jpg"><img src="/static/screenshots/screenshot_001_7686084a-32ae-4399-bf54-fca059f33d22.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>全球定位系统（GPS）的产生与发展 *Content-[01:40-03:00]</h2>
+<h3>GPS系统基本概况</h3>
+<ul>
+<li>由美国建立，全称为<strong>NAVigation Satellite Timing And Ranging Global Positioning System（NAVSTAR GPS）</strong>，设计卫星星座包含24颗GPS卫星 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_002_d7c70d9e-1cb4-4c8f-8a64-0629b68c7279.jpg"><img src="/static/screenshots/screenshot_002_d7c70d9e-1cb4-4c8f-8a64-0629b68c7279.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+<h3>前期技术准备</h3>
+<ul>
+<li>依托两大计划：美国海军Timation计划、美国空军621B计划，为GPS的技术框架奠定基础 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_003_7535168d-b1e8-4316-bbe7-1beaa0226a55.jpg"><img src="/static/screenshots/screenshot_003_7535168d-b1e8-4316-bbe7-1beaa0226a55.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+<h3>关键试验卫星技术突破</h3>
+<ul>
+<li>1967年、1969年分别发射Timation-1、Timation-2，搭载石英钟完成基础试验</li>
+<li>1974年发射NTS-1（Navigation Technology Satellite 1），首次搭载2台铷原子钟，提升时间精度</li>
+<li>1977年发射NTS-2，首次搭载铯钟，进一步优化卫星计时性能 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_004_a98e7d17-32fd-49b9-acaa-6a11543544ab.jpg"><img src="/static/screenshots/screenshot_004_a98e7d17-32fd-49b9-acaa-6a11543544ab.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+<h3>正式项目方案确定</h3>
+<ul>
+<li>1973年美国国防部成立联合工作办公室（JPO-Joint Program Office），综合TRANSIT、Timation和621B等方案的技术优点，正式提出NAVSTAR/GPS项目方案 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_005_c6b48038-e94e-4e8f-984a-6a31ca5acd16.jpg"><img src="/static/screenshots/screenshot_005_c6b48038-e94e-4e8f-984a-6a31ca5acd16.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+<hr>
+<h2>美国政府的GPS政策演变 *Content-[03:00-03:40]</h2>
+<h3>早期AS（反电子欺骗）技术</h3>
+<ul>
+<li>背景：P码（PIMA）技术公开后，敌方可生成P码，为保障军方定位安全，在P码基础上加密W码生成Y码，仅特许用户可使用</li>
+<li>影响：属于防卫性措施，防止战时敌方假信号干扰，但增加了非特许用户的定位数据处理难度，无法使用高精度的P码测距 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_006_5978f2b1-fc45-4b9e-87a3-9fd6918a64d4.jpg"><img src="/static/screenshots/screenshot_006_5978f2b1-fc45-4b9e-87a3-9fd6918a64d4.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+<h3>SS（选择可用性）政策的取消</h3>
+<ul>
+<li>政策调整背景
+<ol>
+<li>国际形势变化：冷战结束，原军事对抗需求减弱</li>
+<li>经济发展需求：GPS产业成为美国经济新增长点，SS政策限制产业发展，遭到民用用户与厂商反对</li>
+<li>技术突破：差分GPS系统可大幅削弱SS政策的精度限制，非特许用户也能获得高精度定位</li>
+<li>国际竞争：俄罗斯格洛纳斯（GLONASS）系统不实施SS政策，定位精度更高，GPS面临用户流失风险</li>
+</ol>
+</li>
+<li>实施调整：1996年美国以总统特别指令形式宣布计划取消SS，2000年5月2日正式取消，此后SS与PPS（精密定位服务）的差异大幅模糊 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_007_d7b4c23a-c191-4aee-b308-a305e390841a.jpg"><img src="/static/screenshots/screenshot_007_d7b4c23a-c191-4aee-b308-a305e390841a.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+<h3>GPS现代化计划</h3>
+<ul>
+<li>核心措施
+<ol>
+<li>从Block IIR卫星开始，在L2频段调制民用L2-C码，非特许用户可使用双频率信号消除电离层延迟 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_008_03a6e013-2def-4eaa-b7aa-e12fd0631763.jpg"><img src="/static/screenshots/screenshot_008_03a6e013-2def-4eaa-b7aa-e12fd0631763.jpg" alt="" style="max-width: 100%;"></a></li>
+<li>从Block IIR-M卫星开始，新增第三民用频率L5，L5码的性能接近军用Y码，进一步提升民用定位精度</li>
+<li>分离军用M码，增强军方信号的抗干扰能力，缩短定位初始化时间，提升军方用户使用稳定性</li>
+<li>具备特定区域干扰敌方使用GPS的能力</li>
+</ol>
+</li>
+<li>目标：保障美国军方用户的安全使用，同时巩固GPS在全球民用卫星导航市场的领导地位 *<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_009_b6e67f97-3d78-4b4d-864c-b4ddba09266c.jpg"><img src="/static/screenshots/screenshot_009_b6e67f97-3d78-4b4d-864c-b4ddba09266c.jpg" alt="" style="max-width: 100%;"></a></li>
+</ul>
+<hr>
+<h2>AI总结</h2>
+<p>本笔记系统梳理了GPS发展历程中的核心节点与美国GPS政策的演变逻辑：首先分析了早期卫星导航无法连续定位的技术缺陷及衍生问题；接着从技术准备、试验卫星到项目立项，完整呈现了GPS系统的诞生过程；最后重点讲解美国GPS政策从早期反电子欺骗的AS技术、限制民用精度的SS政策，到取消SS并推进GPS现代化的调整过程，政策变化既回应了军事安全需求，也适配了民用产业发展与国际竞争态势，体现了卫星导航技术在军事、经济领域的双重战略价值。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;">转载请注明出处</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://lei-shuo.github.io">零の笔记</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("01/23/2026"!=""){
+    var startSite=new Date("01/23/2026");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","lei-shuo/lei-shuo.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
