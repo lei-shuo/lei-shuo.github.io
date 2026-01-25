@@ -238,7 +238,7 @@
 ## AI总结
 本课程首先回顾了第一代卫星导航TRANSIT系统的核心缺陷，明确其被GPS取代的本质原因；随后老师说明课程教学的逻辑矛盾与应对方式，帮助学员建立科学的课程学习思路；接着从数学定义、几何意义、实际计算三个维度详解了多普勒计数的原理；之后强调了美国GPS相关政策对研究和项目方向的指导价值；最后完整梳理了GPS系统从技术储备、项目启动到成熟应用的发展历程，展现了GPS如何通过整合前代技术优点，成为全球通用的卫星导航系统。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p05%2005GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-wu-%EF%BC%89.html">
+<meta property="og:url" content="https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p05%2005GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-wu-%EF%BC%89.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
 <title>GPS测量原理及其应用 p05 05GPS原理及其应用 绪论（五）</title>
 
@@ -267,7 +267,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 }
 
 </style>
-<style>body { background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%) !important; background-attachment: fixed !important; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; } .markdown-body { background: rgba(255, 255, 255, 0.85) !important; backdrop-filter: blur(10px); border-radius: 12px; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); padding: 30px; border: 1px solid rgba(255, 255, 255, 0.18); min-height: 80vh; } .Header, .footer { background: transparent !important; border: none !important; } .side-nav { position: fixed; left: 20px; top: 80px; bottom: 40px; width: 220px; padding: 15px; overflow-y: auto; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(5px); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 4px 15px rgba(0,0,0,0.05); z-index: 9999; } .side-nav-group-title { font-weight: bold; font-size: 14px; color: #555; margin: 15px 0 8px 5px; border-bottom: 2px solid #8ec5fc; display: inline-block; } .side-nav a { display: block; text-decoration: none; color: #444; font-size: 13px; padding: 6px 10px; margin-bottom: 4px; border-radius: 6px; transition: 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .side-nav a:hover { background: linear-gradient(90deg, #8ec5fc, #e0c3fc); color: white; } @media (min-width: 1400px) { .markdown-body { margin-left: 260px; max-width: calc(100% - 280px); } } @media (max-width: 1399px) { .side-nav { display: none; } .markdown-body { width: 100%; } }</style>
+<style>/* 1. 流动渐变背景 */ @keyframes gradientBG { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} } body { background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab) !important; background-size: 400% 400% !important; animation: gradientBG 15s ease infinite !important; background-attachment: fixed !important; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; } /* 2. 文章页磨砂玻璃 */ .markdown-body { background: rgba(255, 255, 255, 0.85) !important; backdrop-filter: blur(10px); border-radius: 12px; box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); padding: 30px; border: 1px solid rgba(255, 255, 255, 0.18); min-height: 80vh; } /* 3. 主页磨砂玻璃适配 */ .avatar { border-radius: 50%; border: 3px solid rgba(255,255,255,0.5); } .side { background: rgba(255, 255, 255, 0.6) !important; backdrop-filter: blur(5px); border-radius: 10px; padding: 10px; margin-bottom: 20px; } /* 4. 透明化原有元素 */ .Header, .footer { background: transparent !important; border: none !important; } /* 5. 左侧目录样式 */ .side-nav { position: fixed; left: 20px; top: 40px; bottom: 40px; width: 220px; padding: 15px; overflow-y: auto; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 9999; } .side-nav-group-title { font-weight: bold; font-size: 15px; color: #333; margin: 15px 0 8px 5px; border-bottom: 2px solid #e73c7e; display: inline-block; } .side-nav a { display: block; text-decoration: none; color: #555; font-size: 14px; padding: 8px 10px; margin-bottom: 5px; border-radius: 6px; transition: 0.2s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .side-nav a:hover { background: linear-gradient(90deg, #e73c7e, #ee7752); color: white; transform: translateX(5px); } /* 响应式调整 */ @media (min-width: 1000px) { .markdown-body { margin-left: 260px; max-width: calc(100% - 280px); } } @media (max-width: 999px) { .side-nav { display: none; } .markdown-body { width: 100%; } }</style>
 
 
 
@@ -275,7 +275,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="header">
 <h1 class="postTitle">GPS测量原理及其应用 p05 05GPS原理及其应用 绪论（五）</h1>
 <div class="title-right">
-    <a href="http://blog.meekdai.com" id="buttonHome" class="btn btn-invisible circle" title="首页">
+    <a href="https://lei-shuo.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
             <path id="pathHome" fill-rule="evenodd"></path>
         </svg>
@@ -457,7 +457,7 @@ $$N=\int_{T1}^{T2}(F0-F2)dt$$
 <div class="comments" id="comments"></div>
 
 </div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="http://blog.meekdai.com">我的博客</a></div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://lei-shuo.github.io">Lei Shuo's Blog</a></div>
 <div id="footer2">
     <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
@@ -466,8 +466,8 @@ $$N=\int_{T1}^{T2}(F0-F2)dt$$
 var now=new Date();
 document.getElementById("copyrightYear").innerHTML=now.getFullYear();
 
-if("02/16/2015"!=""){
-    var startSite=new Date("02/16/2015");
+if("01/25/2026"!=""){
+    var startSite=new Date("01/25/2026");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
     document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
@@ -551,6 +551,6 @@ function iFrameLoading(){
 
 
 </script>
-<script>document.addEventListener('DOMContentLoaded', function() { console.log('Gmeek Custom Script Loaded'); const repoName = document.querySelector('meta[name="repository-name"]') ? document.querySelector('meta[name="repository-name"]').content : ''; let blogBaseUrl = '/blogBase.json'; if (window.location.pathname.includes('/' + repoName)) { blogBaseUrl = '/' + repoName + '/blogBase.json'; } fetch(blogBaseUrl).then(res => res.json()).then(data => { console.log('Data loaded:', data); const nav = document.createElement('div'); nav.className = 'side-nav'; const posts = Object.values(data); const groups = {}; posts.forEach(post => { const label = post.labels[0] || 'Unlabeled'; if (!groups[label]) groups[label] = []; groups[label].push(post); }); Object.keys(groups).sort().forEach(label => { const title = document.createElement('div'); title.className = 'side-nav-group-title'; title.innerText = label; nav.appendChild(title); groups[label].forEach(item => { const link = document.createElement('a'); link.href = item.postUrl; link.innerText = item.postTitle; link.title = item.postTitle; nav.appendChild(link); }); }); document.body.appendChild(nav); }).catch(err => console.error('TOC Error:', err)); });</script><script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { console.log('Init Custom Script'); /* 适配User Page的路径逻辑 */ const blogBaseUrl = '/blogBase.json'; fetch(blogBaseUrl).then(res => res.json()).then(data => { console.log('Data Success', data); const nav = document.createElement('div'); nav.className = 'side-nav'; const titleMain = document.createElement('div'); titleMain.style.fontSize='18px'; titleMain.style.fontWeight='bold'; titleMain.style.marginBottom='15px'; titleMain.style.textAlign='center'; titleMain.innerText='📚 导航'; nav.appendChild(titleMain); const posts = Object.values(data); const groups = {}; posts.forEach(post => { const label = post.labels[0] || '未分类'; if (!groups[label]) groups[label] = []; groups[label].push(post); }); Object.keys(groups).sort().forEach(label => { const title = document.createElement('div'); title.className = 'side-nav-group-title'; title.innerText = label; nav.appendChild(title); groups[label].forEach(item => { const link = document.createElement('a'); link.href = item.postUrl; link.innerText = item.postTitle; link.title = item.postTitle; nav.appendChild(link); }); }); document.body.appendChild(nav); }).catch(err => console.error('Error:', err)); });</script><script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </html>

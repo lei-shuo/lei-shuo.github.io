@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的博客</title><link>http://blog.meekdai.com</link><description>记录生活与技术</description><copyright>我的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>http://blog.meekdai.com</link></image><lastBuildDate>Sun, 25 Jan 2026 07:54:25 +0000</lastBuildDate><managingEditor>我的博客</managingEditor><ttl>60</ttl><webMaster>我的博客</webMaster><item><title>GPS测量原理及其应用 p07 07GPS原理及其应用 绪论（七）</title><link>http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p07%2007GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-qi-%EF%BC%89.html</link><description># GPS原理及其应用 绪论（七）笔记
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Lei Shuo's Blog</title><link>https://lei-shuo.github.io</link><description>Welcome to my personal blog</description><copyright>Lei Shuo's Blog</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://lei-shuo.github.io</link></image><lastBuildDate>Sun, 25 Jan 2026 08:28:08 +0000</lastBuildDate><managingEditor>Lei Shuo's Blog</managingEditor><ttl>60</ttl><webMaster>Lei Shuo's Blog</webMaster><item><title>GPS测量原理及其应用 p07 07GPS原理及其应用 绪论（七）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p07%2007GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-qi-%EF%BC%89.html</link><description># GPS原理及其应用 绪论（七）笔记
 
 ## 目录
 - 无法进行连续定位的原因及引发问题
@@ -59,7 +59,7 @@
 ---
 
 ## AI总结
-本笔记系统梳理了GPS发展历程中的核心节点与美国GPS政策的演变逻辑：首先分析了早期卫星导航无法连续定位的技术缺陷及衍生问题；接着从技术准备、试验卫星到项目立项，完整呈现了GPS系统的诞生过程；最后重点讲解美国GPS政策从早期反电子欺骗的AS技术、限制民用精度的SS政策，到取消SS并推进GPS现代化的调整过程，政策变化既回应了军事安全需求，也适配了民用产业发展与国际竞争态势，体现了卫星导航技术在军事、经济领域的双重战略价值。</description><guid isPermaLink="true">http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p07%2007GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-qi-%EF%BC%89.html</guid><pubDate>Sat, 24 Jan 2026 03:22:16 +0000</pubDate></item><item><title>GPS测量原理及其应用 p06 06GPS原理及其应用 绪论（六）</title><link>http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p06%2006GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-liu-%EF%BC%89.html</link><description># 目录
+本笔记系统梳理了GPS发展历程中的核心节点与美国GPS政策的演变逻辑：首先分析了早期卫星导航无法连续定位的技术缺陷及衍生问题；接着从技术准备、试验卫星到项目立项，完整呈现了GPS系统的诞生过程；最后重点讲解美国GPS政策从早期反电子欺骗的AS技术、限制民用精度的SS政策，到取消SS并推进GPS现代化的调整过程，政策变化既回应了军事安全需求，也适配了民用产业发展与国际竞争态势，体现了卫星导航技术在军事、经济领域的双重战略价值。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p07%2007GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-qi-%EF%BC%89.html</guid><pubDate>Sat, 24 Jan 2026 03:22:16 +0000</pubDate></item><item><title>GPS测量原理及其应用 p06 06GPS原理及其应用 绪论（六）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p06%2006GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-liu-%EF%BC%89.html</link><description># 目录
 - GPS的两种服务：SPS与PPS
 - 美国政府早期的GPS政策（SA政策）
 - 反电子干扰与欺骗的防护技术
@@ -100,7 +100,7 @@
 *![](/static/screenshots/screenshot_005_e2200664-3705-44b4-a21d-dd38c3158579.jpg)
 
 ## AI 总结
-本课程内容围绕GPS的服务体系、早期政策、防护技术以及发展历程展开，详细介绍了GPS两种服务SPS与PPS的定位差异，美国早期SA政策对民用精度的限制措施与争议，针对电子干扰和欺骗的防护手段，以及GPS从军方前期计划到正式项目的关键发展节点，系统呈现了GPS在发展过程中技术、政策层面的核心要点。</description><guid isPermaLink="true">http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p06%2006GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-liu-%EF%BC%89.html</guid><pubDate>Sat, 24 Jan 2026 03:21:38 +0000</pubDate></item><item><title>GPS测量原理及其应用 p05 05GPS原理及其应用 绪论（五）</title><link>http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p05%2005GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-wu-%EF%BC%89.html</link><description>## 目录
+本课程内容围绕GPS的服务体系、早期政策、防护技术以及发展历程展开，详细介绍了GPS两种服务SPS与PPS的定位差异，美国早期SA政策对民用精度的限制措施与争议，针对电子干扰和欺骗的防护手段，以及GPS从军方前期计划到正式项目的关键发展节点，系统呈现了GPS在发展过程中技术、政策层面的核心要点。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p06%2006GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-liu-%EF%BC%89.html</guid><pubDate>Sat, 24 Jan 2026 03:21:38 +0000</pubDate></item><item><title>GPS测量原理及其应用 p05 05GPS原理及其应用 绪论（五）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p05%2005GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-wu-%EF%BC%89.html</link><description>## 目录
 - 上节课内容回顾：第一代卫星导航TRANSIT系统的缺陷 [原片 @ 00:00](https://www.bilibili.com/video/BV1ia4y1s7sj_p5?t=0)
 - 课程教学说明 [原片 @ 06:55](https://www.bilibili.com/video/BV1ia4y1s7sj_p5?t=415)
 - 多普勒计数的原理详解 [原片 @ 12:30](https://www.bilibili.com/video/BV1ia4y1s7sj_p5?t=750)
@@ -212,7 +212,7 @@
 ---
 
 ## AI总结
-本课程首先回顾了第一代卫星导航TRANSIT系统的核心缺陷，明确其被GPS取代的本质原因；随后老师说明课程教学的逻辑矛盾与应对方式，帮助学员建立科学的课程学习思路；接着从数学定义、几何意义、实际计算三个维度详解了多普勒计数的原理；之后强调了美国GPS相关政策对研究和项目方向的指导价值；最后完整梳理了GPS系统从技术储备、项目启动到成熟应用的发展历程，展现了GPS如何通过整合前代技术优点，成为全球通用的卫星导航系统。</description><guid isPermaLink="true">http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p05%2005GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-wu-%EF%BC%89.html</guid><pubDate>Sat, 24 Jan 2026 03:20:56 +0000</pubDate></item><item><title>GPS测量原理及其应用 p04 04GPS原理及其应用 绪论（四）</title><link>http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p04%2004GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-si-%EF%BC%89.html</link><description>## 目录
+本课程首先回顾了第一代卫星导航TRANSIT系统的核心缺陷，明确其被GPS取代的本质原因；随后老师说明课程教学的逻辑矛盾与应对方式，帮助学员建立科学的课程学习思路；接着从数学定义、几何意义、实际计算三个维度详解了多普勒计数的原理；之后强调了美国GPS相关政策对研究和项目方向的指导价值；最后完整梳理了GPS系统从技术储备、项目启动到成熟应用的发展历程，展现了GPS如何通过整合前代技术优点，成为全球通用的卫星导航系统。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p05%2005GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-wu-%EF%BC%89.html</guid><pubDate>Sat, 24 Jan 2026 03:20:56 +0000</pubDate></item><item><title>GPS测量原理及其应用 p04 04GPS原理及其应用 绪论（四）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p04%2004GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-si-%EF%BC%89.html</link><description>## 目录
 1. 第一代卫星导航系统（子午仪系统）的局限性
 2. GPS系统的产生与发展背景
 3. GPS系统的组建历程与关键节点
@@ -271,7 +271,7 @@
 ---
 
 ## 4. AI总结 [原片 @ 21:30](https://www.bilibili.com/video/BV1ia4y1s7sj_p4?t=1290)
-本章节围绕第一代卫星导航系统的局限性与GPS系统的诞生展开：首先剖析了子午仪系统依赖低轨卫星带来的观测窗口短、大气阻力误差、无法连续定位等核心问题，以及其在测量应用中的精度与周期短板；随后介绍GPS系统的研发背景——整合美国海空军的原子钟、测距码等技术积累，以距离测量替代距离差测量，解决第一代系统的定位痛点；最后梳理了GPS系统20年研制周期中的关键节点，1993年具备初步工作能力、1995年完全建成，成为全球覆盖、支持连续定位的成熟卫星导航系统，彻底弥补了第一代卫星导航系统的不足。</description><guid isPermaLink="true">http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p04%2004GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-si-%EF%BC%89.html</guid><pubDate>Fri, 23 Jan 2026 09:43:45 +0000</pubDate></item><item><title>GPS测量原理及其应用 p03 03GPS原理及其应用 绪论（三）</title><link>http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p03%2003GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-san-%EF%BC%89.html</link><description>## 目录
+本章节围绕第一代卫星导航系统的局限性与GPS系统的诞生展开：首先剖析了子午仪系统依赖低轨卫星带来的观测窗口短、大气阻力误差、无法连续定位等核心问题，以及其在测量应用中的精度与周期短板；随后介绍GPS系统的研发背景——整合美国海空军的原子钟、测距码等技术积累，以距离测量替代距离差测量，解决第一代系统的定位痛点；最后梳理了GPS系统20年研制周期中的关键节点，1993年具备初步工作能力、1995年完全建成，成为全球覆盖、支持连续定位的成熟卫星导航系统，彻底弥补了第一代卫星导航系统的不足。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p04%2004GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-si-%EF%BC%89.html</guid><pubDate>Fri, 23 Jan 2026 09:43:45 +0000</pubDate></item><item><title>GPS测量原理及其应用 p03 03GPS原理及其应用 绪论（三）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p03%2003GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-san-%EF%BC%89.html</link><description>## 目录
 - 1. 多普勒技术与距离差的关系
 - 2. 多普勒定位原理
 - 3. 子午卫星系统的局限性
@@ -289,7 +289,7 @@ $$F_0 - F_2 = (F_0 - F_s) + (F_s - F_2)$$
 - 两者差值为固定值，示例中为32000周
 
 ### 多普勒计数与距离差的关联
-通过积分推导可得，多普勒计数可对应卫星与接收机在两个时刻的距离差 $D_2 - D_1$，一次多普勒测量即可获取该距离差，因此多普勒测量也被称为距离差测量。</description><guid isPermaLink="true">http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p03%2003GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-san-%EF%BC%89.html</guid><pubDate>Fri, 23 Jan 2026 09:43:07 +0000</pubDate></item><item><title>GPS测量原理及其应用 p02 02GPS原理及其应用 绪论（二）</title><link>http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p02%2002GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-er-%EF%BC%89.html</link><description># GPS测量原理及其应用 绪论笔记
+通过积分推导可得，多普勒计数可对应卫星与接收机在两个时刻的距离差 $D_2 - D_1$，一次多普勒测量即可获取该距离差，因此多普勒测量也被称为距离差测量。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p03%2003GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-san-%EF%BC%89.html</guid><pubDate>Fri, 23 Jan 2026 09:43:07 +0000</pubDate></item><item><title>GPS测量原理及其应用 p02 02GPS原理及其应用 绪论（二）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p02%2002GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-er-%EF%BC%89.html</link><description># GPS测量原理及其应用 绪论笔记
 
 ## 目录
 - 美国与前苏联卫星导航系统发展对比
@@ -348,7 +348,7 @@ $$F_0 - F_2 = (F_0 - F_s) + (F_s - F_2)$$
 ---
 
 ## AI总结
-本课程作为GPS原理及应用的绪论内容，通过对比美苏卫星导航系统的发展路径总结了系统长期运行的关键经验，详细讲解了子午卫星系统的轨道、信号及信号分类，推导了多普勒测量的核心公式，分析了SA政策对民用定位精度的影响，同时梳理了从第一颗人造卫星发射到子午卫星民用化的技术发展脉络，为后续深入学习GPS原理奠定了全面的知识基础。</description><guid isPermaLink="true">http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p02%2002GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-er-%EF%BC%89.html</guid><pubDate>Fri, 23 Jan 2026 08:46:22 +0000</pubDate></item><item><title>GPS测量原理及其应用 p01 01GPS原理及其应用 绪论（一）</title><link>http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p01%2001GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-yi-%EF%BC%89.html</link><description># 目录
+本课程作为GPS原理及应用的绪论内容，通过对比美苏卫星导航系统的发展路径总结了系统长期运行的关键经验，详细讲解了子午卫星系统的轨道、信号及信号分类，推导了多普勒测量的核心公式，分析了SA政策对民用定位精度的影响，同时梳理了从第一颗人造卫星发射到子午卫星民用化的技术发展脉络，为后续深入学习GPS原理奠定了全面的知识基础。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p02%2002GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-er-%EF%BC%89.html</guid><pubDate>Fri, 23 Jan 2026 08:46:22 +0000</pubDate></item><item><title>GPS测量原理及其应用 p01 01GPS原理及其应用 绪论（一）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p01%2001GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-yi-%EF%BC%89.html</link><description># 目录
 - 课程前置说明
 - 绪论：GPS的产生与发展背景
 - 第一代卫星导航系统：子午卫星系统
@@ -417,4 +417,4 @@ $$F_0 - F_2 = (F_0 - F_s) + (F_s - F_2)$$
 *![](/static/screenshots/screenshot_007_78bb4a04-4a1a-4505-9d70-3664f5eb4ef8.jpg) 课件展示SA政策终止的时间
 
 ## AI 总结
-本课程为《GPS原理及其应用》绪论部分，首先明确了课程体系、授课安排与成绩构成，给出了资料性内容自学、重点难点精讲的学习指引；随后从GPS的起源背景切入，讲解了第一代卫星导航系统——子午卫星系统的技术原理、发展历程，结合美国海军的军事需求，揭示了卫星导航系统民用用户占主导的行业特点；最后介绍了GPS早期的SA精度限制政策、AS反欺骗政策，以及2000年SA政策终止的重要调整，展现了GPS政策从优先保障军事需求，到兼顾民用产业发展的演变过程。</description><guid isPermaLink="true">http://blog.meekdai.com/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p01%2001GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-yi-%EF%BC%89.html</guid><pubDate>Fri, 23 Jan 2026 08:42:43 +0000</pubDate></item></channel></rss>
+本课程为《GPS原理及其应用》绪论部分，首先明确了课程体系、授课安排与成绩构成，给出了资料性内容自学、重点难点精讲的学习指引；随后从GPS的起源背景切入，讲解了第一代卫星导航系统——子午卫星系统的技术原理、发展历程，结合美国海军的军事需求，揭示了卫星导航系统民用用户占主导的行业特点；最后介绍了GPS早期的SA精度限制政策、AS反欺骗政策，以及2000年SA政策终止的重要调整，展现了GPS政策从优先保障军事需求，到兼顾民用产业发展的演变过程。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p01%2001GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-yi-%EF%BC%89.html</guid><pubDate>Fri, 23 Jan 2026 08:42:43 +0000</pubDate></item></channel></rss>
