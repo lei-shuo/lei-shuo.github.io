@@ -1,10 +1,7 @@
-// Gmeek博客增强功能脚本
-// 创建左侧站点目录和右侧文章目录
-
+// Gmeek增强功能 - 简化版本
 document.addEventListener('DOMContentLoaded', function() {
     // 创建左侧站点目录
     function createSiteTOC() {
-        // 跳过主页
         if (window.location.pathname === "/" || window.location.pathname.endsWith("index.html")) {
             return;
         }
@@ -14,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         toc.innerHTML = "<div class='site-toc-header'>📚 文章目录</div><div class='site-toc-content'></div>";
         document.body.appendChild(toc);
         
-        // 获取文章数据
         fetch("/postList.json")
             .then(r => r.json())
             .then(data => {
@@ -31,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 创建右侧文章目录
     function createArticleTOC() {
-        // 跳过主页
         if (window.location.pathname === "/" || window.location.pathname.endsWith("index.html")) {
             return;
         }
