@@ -1,10 +1,8 @@
 {
-    "title":"我的笔记",    
-"title" : "B Title" ,
-"title" : "博客标题" ,
-    "subTitle":"笔记📒",  
-"subTitle" : "博客描述" ,
+    "title":"我的笔记",
+    "subTitle":"笔记📒",
     "avatarUrl":"https://github.githubassets.com/favicons/favicon.svg",
     "allHead":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>",
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>",
     "GMEEK_VERSION":"last"
 }
