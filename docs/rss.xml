@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://lei-shuo.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://lei-shuo.github.io</link></image><lastBuildDate>Fri, 06 Feb 2026 08:40:33 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>GPS测量原理及其应用 p02 02GPS原理及其应用 绪论（二）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p02%2002GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-er-%EF%BC%89.html</link><description># GPS测量原理及其应用 绪论笔记
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>我的笔记</title><link>https://lei-shuo.github.io</link><description>笔记📒</description><copyright>我的笔记</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://lei-shuo.github.io</link></image><lastBuildDate>Fri, 06 Feb 2026 08:45:16 +0000</lastBuildDate><managingEditor>我的笔记</managingEditor><ttl>60</ttl><webMaster>我的笔记</webMaster><item><title>GPS测量原理及其应用 p03 03GPS原理及其应用 绪论（三）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p03%2003GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-san-%EF%BC%89.html</link><description>## 目录
+- 1. 多普勒技术与距离差的关系
+- 2. 多普勒定位原理
+- 3. 子午卫星系统的局限性
+- 4. AI 总结
+
+---
+
+## 1. 多普勒技术与距离差的关系 [原片 @ 00:00](https://www.bilibili.com/video/BV1ia4y1s7sj_p3?t=0)*
+### 核心公式推导
+将接收机频率与卫星频率的差值拆分为两部分：
+$$F_0 - F_2 = (F_0 - F_s) + (F_s - F_2)$$
+其中：
+- $F_0$：接收机发射的固定频率（示例：400MHz）
+- $F_s$：卫星发射的固定频率（示例：399.968MHz）
+- 两者差值为固定值，示例中为32000周
+
+### 多普勒计数与距离差的关联
+通过积分推导可得，多普勒计数可对应卫星与接收机在两个时刻的距离差 $D_2 - D_1$，一次多普勒测量即可获取该距离差，因此多普勒测量也被称为距离差测量。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p03%2003GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-san-%EF%BC%89.html</guid><pubDate>Fri, 06 Feb 2026 08:40:29 +0000</pubDate></item><item><title>GPS测量原理及其应用 p02 02GPS原理及其应用 绪论（二）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p02%2002GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-er-%EF%BC%89.html</link><description># GPS测量原理及其应用 绪论笔记
 
 ## 目录
 - 美国与前苏联卫星导航系统发展对比
