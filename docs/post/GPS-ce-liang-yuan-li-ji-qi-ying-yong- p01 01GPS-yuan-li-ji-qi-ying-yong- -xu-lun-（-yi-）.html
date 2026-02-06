@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://github.githubassets.com/favicons/favicon.svg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 目录
+- 课程前置说明
+- 绪论：GPS的产生与发展背景
+- 第一代卫星导航系统：子午卫星系统
+- GPS早期政策：SA与AS政策
+- 美国GPS政策新变化
+- AI 总结
+
+## 课程前置说明 [原片 @ 00:00](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=0)
+- 课程体系：
+  - 《GPS原理及其应用》为专业基础课，使用指定教材，授课范围为教材第一编至199页；第二编内容属于《测量与数据处理》课程（36学时，可选修）
+  - 后续还有《卫星导航定位程序设计》课程，需学习定位程序编写
+- 上课内容侧重：
+  - 资料性内容（如卫星数量、状态）自行阅读，重点讲解难理解的知识点，建议课前先预习课本
+- 成绩构成：平时成绩占30%-40%，考试成绩占60%-70%，具体细则后续统一
+- 学习建议：有疑问可课上或课后提出；对该方向感兴趣可联系老师获取参考书推荐
+
+*![](/static/screenshots/screenshot_000_5bd06244-aa80-41e5-a997-7b394e374c58.jpg) 课程标题页，显示课程名称、授课教师信息
+
+## 绪论：GPS的产生与发展背景 [原片 @ 04:32](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=272)
+绪论主要介绍GPS的产生背景、美国政府相关政策，同时会介绍其他卫星导航系统（俄罗斯格罗纳斯、欧洲伽利略、中国北斗）
+
+*![](/static/screenshots/screenshot_001_d91fc61b-e825-4ba5-9e6f-eed85357538c.jpg) 教师开始讲解绪论内容，黑板标注课程主题
+
+## 第一代卫星导航系统：子午卫星系统 [原片 @ 05:42](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=342)
+### 1. 技术起源
+- 1957年10月苏联发射第一颗人造地球卫星后，美国约翰·霍普金斯大学APL实验室的两位博士对卫星信号的多普勒效应产生兴趣
+- 多普勒效应：卫星发射频率为$F_s$的信号，地面接收时频率会发生变化
+- 相关研究结论：
+  - 已知地面站位置，通过多普勒测量可确定卫星轨道
+  - 已知卫星轨道，用户通过多普勒测量可确定自身位置
+  - 两者结合构成卫星导航定位基本框架
+
+*![](/static/screenshots/screenshot_002_fbb55d02-b3c0-4d90-ae98-fcf475d11fbe.jpg) 教师讲解多普勒效应原理
+
+### 2. 应用需求：美国海军的定位需求
+- 冷战背景下，美国海军需解决核潜艇的定位问题：核潜艇长期水下航行，惯导系统误差随时间累积，需定期校准；且发射核武器时，需在短时间内将自身坐标误差控制在10米以内，以保证武器命中精度（要求命中误差100米）
+- 子午卫星系统可满足核潜艇在不浮出水面的情况下，通过天线接收卫星信号完成定位，校准惯导系统
+
+### 3. 系统发展与用户特点
+- 1958年12月开始研制，1964年建成并供军方使用，1967年10月开放民用
+- 用户规模：最终民用用户9.5万个，军事用户仅650个，说明卫星导航系统的主要用户为非军方用户，政策制定需兼顾民用需求，才能推动产业发展（如美国GPS产业因兼顾民用而快速发展，形成良性循环）
+
+*![](/static/screenshots/screenshot_003_d6bb6cb0-c1cf-4444-a246-7fd5f6786156.jpg) 教师讲解卫星导航系统用户结构特点
+
+## GPS早期政策：SA与AS政策 [原片 @ 03:56](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=236)
+### 1. SA（Selective Availability，选择可用性）政策
+- 作用：通过降低民用GPS信号精度，保障军事应用的安全性
+- 原理：对卫星钟差和星历误差进行人为加扰，使民用定位精度降低
+- 相关公式与图示：
+  多普勒计数公式 $N=\int_{t_1}^{t_2} (F_S - F_R) dt$，SA政策会对测量结果引入误差
+
+*![](/static/screenshots/screenshot_004_8c99ea37-81dc-4e3b-8e96-8e71beb3745b.jpg) 黑板上的SA政策相关公式与图示
+
+### 2. AS（Anti-Spoofing，反电子欺骗）政策
+- 作用：防止敌方通过伪造GPS信号进行欺骗
+- 实施方法：在P码上加入严格保密的W码，生成完全保密的Y码，即 $P \oplus W = Y$
+- 该政策仅影响P码，不影响民用C/A码
+
+*![](/static/screenshots/screenshot_005_dfa7b81a-9b9c-4af9-b908-0abfc475147a.jpg) 黑板上的AS政策公式 $P \oplus W = Y$
+*![](/static/screenshots/screenshot_006_f66dbd7c-362f-4cbd-be7a-078467e4e573.jpg) 课件展示AS政策的实施方法
+
+## 美国GPS政策新变化：SA政策终止 [原片 @ 14:24](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=864)
+- 2000年5月2日4时（UTC），美国宣布终止SA政策，民用GPS信号精度大幅提升
+- 政策调整原因：随着技术发展，SA政策对民用产业的限制作用凸显，同时美国军方已拥有其他保障定位精度的手段
+
+*![](/static/screenshots/screenshot_007_78bb4a04-4a1a-4505-9d70-3664f5eb4ef8.jpg) 课件展示SA政策终止的时间
+
+## AI 总结
+本课程为《GPS原理及其应用》绪论部分，首先明确了课程体系、授课安排与成绩构成，给出了资料性内容自学、重点难点精讲的学习指引；随后从GPS的起源背景切入，讲解了第一代卫星导航系统——子午卫星系统的技术原理、发展历程，结合美国海军的军事需求，揭示了卫星导航系统民用用户占主导的行业特点；最后介绍了GPS早期的SA精度限制政策、AS反欺骗政策，以及2000年SA政策终止的重要调整，展现了GPS政策从优先保障军事需求，到兼顾民用产业发展的演变过程。">
+<meta property="og:title" content="GPS测量原理及其应用 p01 01GPS原理及其应用 绪论（一）">
+<meta property="og:description" content="# 目录
+- 课程前置说明
+- 绪论：GPS的产生与发展背景
+- 第一代卫星导航系统：子午卫星系统
+- GPS早期政策：SA与AS政策
+- 美国GPS政策新变化
+- AI 总结
+
+## 课程前置说明 [原片 @ 00:00](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=0)
+- 课程体系：
+  - 《GPS原理及其应用》为专业基础课，使用指定教材，授课范围为教材第一编至199页；第二编内容属于《测量与数据处理》课程（36学时，可选修）
+  - 后续还有《卫星导航定位程序设计》课程，需学习定位程序编写
+- 上课内容侧重：
+  - 资料性内容（如卫星数量、状态）自行阅读，重点讲解难理解的知识点，建议课前先预习课本
+- 成绩构成：平时成绩占30%-40%，考试成绩占60%-70%，具体细则后续统一
+- 学习建议：有疑问可课上或课后提出；对该方向感兴趣可联系老师获取参考书推荐
+
+*![](/static/screenshots/screenshot_000_5bd06244-aa80-41e5-a997-7b394e374c58.jpg) 课程标题页，显示课程名称、授课教师信息
+
+## 绪论：GPS的产生与发展背景 [原片 @ 04:32](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=272)
+绪论主要介绍GPS的产生背景、美国政府相关政策，同时会介绍其他卫星导航系统（俄罗斯格罗纳斯、欧洲伽利略、中国北斗）
+
+*![](/static/screenshots/screenshot_001_d91fc61b-e825-4ba5-9e6f-eed85357538c.jpg) 教师开始讲解绪论内容，黑板标注课程主题
+
+## 第一代卫星导航系统：子午卫星系统 [原片 @ 05:42](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=342)
+### 1. 技术起源
+- 1957年10月苏联发射第一颗人造地球卫星后，美国约翰·霍普金斯大学APL实验室的两位博士对卫星信号的多普勒效应产生兴趣
+- 多普勒效应：卫星发射频率为$F_s$的信号，地面接收时频率会发生变化
+- 相关研究结论：
+  - 已知地面站位置，通过多普勒测量可确定卫星轨道
+  - 已知卫星轨道，用户通过多普勒测量可确定自身位置
+  - 两者结合构成卫星导航定位基本框架
+
+*![](/static/screenshots/screenshot_002_fbb55d02-b3c0-4d90-ae98-fcf475d11fbe.jpg) 教师讲解多普勒效应原理
+
+### 2. 应用需求：美国海军的定位需求
+- 冷战背景下，美国海军需解决核潜艇的定位问题：核潜艇长期水下航行，惯导系统误差随时间累积，需定期校准；且发射核武器时，需在短时间内将自身坐标误差控制在10米以内，以保证武器命中精度（要求命中误差100米）
+- 子午卫星系统可满足核潜艇在不浮出水面的情况下，通过天线接收卫星信号完成定位，校准惯导系统
+
+### 3. 系统发展与用户特点
+- 1958年12月开始研制，1964年建成并供军方使用，1967年10月开放民用
+- 用户规模：最终民用用户9.5万个，军事用户仅650个，说明卫星导航系统的主要用户为非军方用户，政策制定需兼顾民用需求，才能推动产业发展（如美国GPS产业因兼顾民用而快速发展，形成良性循环）
+
+*![](/static/screenshots/screenshot_003_d6bb6cb0-c1cf-4444-a246-7fd5f6786156.jpg) 教师讲解卫星导航系统用户结构特点
+
+## GPS早期政策：SA与AS政策 [原片 @ 03:56](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=236)
+### 1. SA（Selective Availability，选择可用性）政策
+- 作用：通过降低民用GPS信号精度，保障军事应用的安全性
+- 原理：对卫星钟差和星历误差进行人为加扰，使民用定位精度降低
+- 相关公式与图示：
+  多普勒计数公式 $N=\int_{t_1}^{t_2} (F_S - F_R) dt$，SA政策会对测量结果引入误差
+
+*![](/static/screenshots/screenshot_004_8c99ea37-81dc-4e3b-8e96-8e71beb3745b.jpg) 黑板上的SA政策相关公式与图示
+
+### 2. AS（Anti-Spoofing，反电子欺骗）政策
+- 作用：防止敌方通过伪造GPS信号进行欺骗
+- 实施方法：在P码上加入严格保密的W码，生成完全保密的Y码，即 $P \oplus W = Y$
+- 该政策仅影响P码，不影响民用C/A码
+
+*![](/static/screenshots/screenshot_005_dfa7b81a-9b9c-4af9-b908-0abfc475147a.jpg) 黑板上的AS政策公式 $P \oplus W = Y$
+*![](/static/screenshots/screenshot_006_f66dbd7c-362f-4cbd-be7a-078467e4e573.jpg) 课件展示AS政策的实施方法
+
+## 美国GPS政策新变化：SA政策终止 [原片 @ 14:24](https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=864)
+- 2000年5月2日4时（UTC），美国宣布终止SA政策，民用GPS信号精度大幅提升
+- 政策调整原因：随着技术发展，SA政策对民用产业的限制作用凸显，同时美国军方已拥有其他保障定位精度的手段
+
+*![](/static/screenshots/screenshot_007_78bb4a04-4a1a-4505-9d70-3664f5eb4ef8.jpg) 课件展示SA政策终止的时间
+
+## AI 总结
+本课程为《GPS原理及其应用》绪论部分，首先明确了课程体系、授课安排与成绩构成，给出了资料性内容自学、重点难点精讲的学习指引；随后从GPS的起源背景切入，讲解了第一代卫星导航系统——子午卫星系统的技术原理、发展历程，结合美国海军的军事需求，揭示了卫星导航系统民用用户占主导的行业特点；最后介绍了GPS早期的SA精度限制政策、AS反欺骗政策，以及2000年SA政策终止的重要调整，展现了GPS政策从优先保障军事需求，到兼顾民用产业发展的演变过程。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p01%2001GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-yi-%EF%BC%89.html">
+<meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
+<title>GPS测量原理及其应用 p01 01GPS原理及其应用 绪论（一）</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">GPS测量原理及其应用 p01 01GPS原理及其应用 绪论（一）</h1>
+<div class="title-right">
+    <a href="https://lei-shuo.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/lei-shuo/lei-shuo.github.io/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>目录</h1>
+<ul>
+<li>课程前置说明</li>
+<li>绪论：GPS的产生与发展背景</li>
+<li>第一代卫星导航系统：子午卫星系统</li>
+<li>GPS早期政策：SA与AS政策</li>
+<li>美国GPS政策新变化</li>
+<li>AI 总结</li>
+</ul>
+<h2>课程前置说明 <a href="https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=0" rel="nofollow">原片 @ 00:00</a></h2>
+<ul>
+<li>课程体系：
+<ul>
+<li>《GPS原理及其应用》为专业基础课，使用指定教材，授课范围为教材第一编至199页；第二编内容属于《测量与数据处理》课程（36学时，可选修）</li>
+<li>后续还有《卫星导航定位程序设计》课程，需学习定位程序编写</li>
+</ul>
+</li>
+<li>上课内容侧重：
+<ul>
+<li>资料性内容（如卫星数量、状态）自行阅读，重点讲解难理解的知识点，建议课前先预习课本</li>
+</ul>
+</li>
+<li>成绩构成：平时成绩占30%-40%，考试成绩占60%-70%，具体细则后续统一</li>
+<li>学习建议：有疑问可课上或课后提出；对该方向感兴趣可联系老师获取参考书推荐</li>
+</ul>
+<p>*<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_000_5bd06244-aa80-41e5-a997-7b394e374c58.jpg"><img src="/static/screenshots/screenshot_000_5bd06244-aa80-41e5-a997-7b394e374c58.jpg" alt="" style="max-width: 100%;"></a> 课程标题页，显示课程名称、授课教师信息</p>
+<h2>绪论：GPS的产生与发展背景 <a href="https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=272" rel="nofollow">原片 @ 04:32</a></h2>
+<p>绪论主要介绍GPS的产生背景、美国政府相关政策，同时会介绍其他卫星导航系统（俄罗斯格罗纳斯、欧洲伽利略、中国北斗）</p>
+<p>*<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_001_d91fc61b-e825-4ba5-9e6f-eed85357538c.jpg"><img src="/static/screenshots/screenshot_001_d91fc61b-e825-4ba5-9e6f-eed85357538c.jpg" alt="" style="max-width: 100%;"></a> 教师开始讲解绪论内容，黑板标注课程主题</p>
+<h2>第一代卫星导航系统：子午卫星系统 <a href="https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=342" rel="nofollow">原片 @ 05:42</a></h2>
+<h3>1. 技术起源</h3>
+<ul>
+<li>1957年10月苏联发射第一颗人造地球卫星后，美国约翰·霍普金斯大学APL实验室的两位博士对卫星信号的多普勒效应产生兴趣</li>
+<li>多普勒效应：卫星发射频率为$F_s$的信号，地面接收时频率会发生变化</li>
+<li>相关研究结论：
+<ul>
+<li>已知地面站位置，通过多普勒测量可确定卫星轨道</li>
+<li>已知卫星轨道，用户通过多普勒测量可确定自身位置</li>
+<li>两者结合构成卫星导航定位基本框架</li>
+</ul>
+</li>
+</ul>
+<p>*<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_002_fbb55d02-b3c0-4d90-ae98-fcf475d11fbe.jpg"><img src="/static/screenshots/screenshot_002_fbb55d02-b3c0-4d90-ae98-fcf475d11fbe.jpg" alt="" style="max-width: 100%;"></a> 教师讲解多普勒效应原理</p>
+<h3>2. 应用需求：美国海军的定位需求</h3>
+<ul>
+<li>冷战背景下，美国海军需解决核潜艇的定位问题：核潜艇长期水下航行，惯导系统误差随时间累积，需定期校准；且发射核武器时，需在短时间内将自身坐标误差控制在10米以内，以保证武器命中精度（要求命中误差100米）</li>
+<li>子午卫星系统可满足核潜艇在不浮出水面的情况下，通过天线接收卫星信号完成定位，校准惯导系统</li>
+</ul>
+<h3>3. 系统发展与用户特点</h3>
+<ul>
+<li>1958年12月开始研制，1964年建成并供军方使用，1967年10月开放民用</li>
+<li>用户规模：最终民用用户9.5万个，军事用户仅650个，说明卫星导航系统的主要用户为非军方用户，政策制定需兼顾民用需求，才能推动产业发展（如美国GPS产业因兼顾民用而快速发展，形成良性循环）</li>
+</ul>
+<p>*<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_003_d6bb6cb0-c1cf-4444-a246-7fd5f6786156.jpg"><img src="/static/screenshots/screenshot_003_d6bb6cb0-c1cf-4444-a246-7fd5f6786156.jpg" alt="" style="max-width: 100%;"></a> 教师讲解卫星导航系统用户结构特点</p>
+<h2>GPS早期政策：SA与AS政策 <a href="https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=236" rel="nofollow">原片 @ 03:56</a></h2>
+<h3>1. SA（Selective Availability，选择可用性）政策</h3>
+<ul>
+<li>作用：通过降低民用GPS信号精度，保障军事应用的安全性</li>
+<li>原理：对卫星钟差和星历误差进行人为加扰，使民用定位精度降低</li>
+<li>相关公式与图示：<br>
+多普勒计数公式 $N=\int_{t_1}^{t_2} (F_S - F_R) dt$，SA政策会对测量结果引入误差</li>
+</ul>
+<p>*<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_004_8c99ea37-81dc-4e3b-8e96-8e71beb3745b.jpg"><img src="/static/screenshots/screenshot_004_8c99ea37-81dc-4e3b-8e96-8e71beb3745b.jpg" alt="" style="max-width: 100%;"></a> 黑板上的SA政策相关公式与图示</p>
+<h3>2. AS（Anti-Spoofing，反电子欺骗）政策</h3>
+<ul>
+<li>作用：防止敌方通过伪造GPS信号进行欺骗</li>
+<li>实施方法：在P码上加入严格保密的W码，生成完全保密的Y码，即 $P \oplus W = Y$
+</li>
+<li>该政策仅影响P码，不影响民用C/A码</li>
+</ul>
+<p>*<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_005_dfa7b81a-9b9c-4af9-b908-0abfc475147a.jpg"><img src="/static/screenshots/screenshot_005_dfa7b81a-9b9c-4af9-b908-0abfc475147a.jpg" alt="" style="max-width: 100%;"></a> 黑板上的AS政策公式 $P \oplus W = Y$<br>
+*<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_006_f66dbd7c-362f-4cbd-be7a-078467e4e573.jpg"><img src="/static/screenshots/screenshot_006_f66dbd7c-362f-4cbd-be7a-078467e4e573.jpg" alt="" style="max-width: 100%;"></a> 课件展示AS政策的实施方法</p>
+<h2>美国GPS政策新变化：SA政策终止 <a href="https://www.bilibili.com/video/BV1ia4y1s7sj_p1?t=864" rel="nofollow">原片 @ 14:24</a></h2>
+<ul>
+<li>2000年5月2日4时（UTC），美国宣布终止SA政策，民用GPS信号精度大幅提升</li>
+<li>政策调整原因：随着技术发展，SA政策对民用产业的限制作用凸显，同时美国军方已拥有其他保障定位精度的手段</li>
+</ul>
+<p>*<a target="_blank" rel="noopener noreferrer" href="/static/screenshots/screenshot_007_78bb4a04-4a1a-4505-9d70-3664f5eb4ef8.jpg"><img src="/static/screenshots/screenshot_007_78bb4a04-4a1a-4505-9d70-3664f5eb4ef8.jpg" alt="" style="max-width: 100%;"></a> 课件展示SA政策终止的时间</p>
+<h2>AI 总结</h2>
+<p>本课程为《GPS原理及其应用》绪论部分，首先明确了课程体系、授课安排与成绩构成，给出了资料性内容自学、重点难点精讲的学习指引；随后从GPS的起源背景切入，讲解了第一代卫星导航系统——子午卫星系统的技术原理、发展历程，结合美国海军的军事需求，揭示了卫星导航系统民用用户占主导的行业特点；最后介绍了GPS早期的SA精度限制政策、AS反欺骗政策，以及2000年SA政策终止的重要调整，展现了GPS政策从优先保障军事需求，到兼顾民用产业发展的演变过程。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://lei-shuo.github.io">Blog Title</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","lei-shuo/lei-shuo.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</html>

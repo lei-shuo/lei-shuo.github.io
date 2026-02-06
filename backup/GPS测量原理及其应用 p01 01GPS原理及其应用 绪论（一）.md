@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://lei-shuo.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://lei-shuo.github.io</link></image><lastBuildDate>Fri, 06 Feb 2026 08:40:02 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>GPS测量原理及其应用 p01 01GPS原理及其应用 绪论（一）</title><link>https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p01%2001GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-yi-%EF%BC%89.html</link><description># 目录
+# 目录
 - 课程前置说明
 - 绪论：GPS的产生与发展背景
 - 第一代卫星导航系统：子午卫星系统
@@ -68,4 +67,4 @@
 *![](/static/screenshots/screenshot_007_78bb4a04-4a1a-4505-9d70-3664f5eb4ef8.jpg) 课件展示SA政策终止的时间
 
 ## AI 总结
-本课程为《GPS原理及其应用》绪论部分，首先明确了课程体系、授课安排与成绩构成，给出了资料性内容自学、重点难点精讲的学习指引；随后从GPS的起源背景切入，讲解了第一代卫星导航系统——子午卫星系统的技术原理、发展历程，结合美国海军的军事需求，揭示了卫星导航系统民用用户占主导的行业特点；最后介绍了GPS早期的SA精度限制政策、AS反欺骗政策，以及2000年SA政策终止的重要调整，展现了GPS政策从优先保障军事需求，到兼顾民用产业发展的演变过程。</description><guid isPermaLink="true">https://lei-shuo.github.io/post/GPS-ce-liang-yuan-li-ji-qi-ying-yong-%20p01%2001GPS-yuan-li-ji-qi-ying-yong-%20-xu-lun-%EF%BC%88-yi-%EF%BC%89.html</guid><pubDate>Fri, 06 Feb 2026 08:39:35 +0000</pubDate></item></channel></rss>
+本课程为《GPS原理及其应用》绪论部分，首先明确了课程体系、授课安排与成绩构成，给出了资料性内容自学、重点难点精讲的学习指引；随后从GPS的起源背景切入，讲解了第一代卫星导航系统——子午卫星系统的技术原理、发展历程，结合美国海军的军事需求，揭示了卫星导航系统民用用户占主导的行业特点；最后介绍了GPS早期的SA精度限制政策、AS反欺骗政策，以及2000年SA政策终止的重要调整，展现了GPS政策从优先保障军事需求，到兼顾民用产业发展的演变过程。
